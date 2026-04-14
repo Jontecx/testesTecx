@@ -118,7 +118,7 @@ const NewHero = () => {
           >
             <div className="relative w-full max-w-[500px] aspect-[4/5] flex items-center justify-center bg-white rounded-[4rem] overflow-hidden p-8">
               <img 
-                src="https://picsum.photos/seed/doctor-premium-white/1000/1500" 
+                src="/image.png" 
                 alt="Dra. Ticiane Carvalho" 
                 className="w-full h-full object-cover rounded-[2.5rem]"
                 referrerPolicy="no-referrer"
