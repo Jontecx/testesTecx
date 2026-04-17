@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-brand-primary: #9E182B; /* Red Wine */
+  --color-brand-secondary: #F9CBD6; /* Rose Quartz */
+  --color-brand-accent: #F2EDD2; /* Oat Milk */
+  --color-brand-bg: #FFFFFF;
+  --color-brand-text: #2C1810;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-bg text-brand-text font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-brand-primary;
+  }
+}
+
+.hero-overlay {
+  background: linear-gradient(180deg, rgba(44, 24, 16, 0.45) 0%, rgba(158, 24, 43, 0.75) 100%);
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl shadow-sm;
+}
+
+.btn-primary, .btn-premium {
+  @apply relative overflow-hidden bg-brand-primary text-brand-accent px-10 py-4 rounded-lg font-bold transition-all duration-500 hover:shadow-[0_0_30px_rgba(158,24,43,0.3)] hover:scale-105 active:scale-95 uppercase tracking-[0.2em] text-xs inline-block text-center border-b-2 border-[#D4AF37] shadow-xl shadow-brand-primary/10 cursor-pointer;
+  background-image: linear-gradient(135deg, #9E182B 0%, #7A1020 100%);
+}
+
+.btn-primary::after, .btn-premium::after {
+  content: '';
+  @apply absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-[#D4AF37]/30 to-transparent transition-all duration-1000;
+}
+
+.btn-primary:hover::after, .btn-premium:hover::after {
+  @apply left-[100%];
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-primary/10;
+}
+
+.section-padding {
+  @apply py-24 lg:py-32 px-6 md:px-12 lg:px-24;
+}
